@@ -39,7 +39,7 @@ const CATEGORIES = ["grocery", "restaurant", "pharmacy", "electronics", "fashion
 const SHOPS = ["Kirana", "Cafe", "Medicals", "Mart", "Bazaar", "Foods", "Traders", "Store", "Express", "Hub"];
 
 const T0 = Date.parse("2026-01-01T00:00:00Z");
-const SPAN = Date.parse("2026-09-25T00:00:00Z") - T0;
+const SPAN = Date.parse("2026-09-21T00:00:00Z") - T0;
 const iso = (ms) => new Date(ms).toISOString();
 const upiRef = (n) => `UPI${String(260000000000 + n * 7919).padStart(12, "0")}`;
 
