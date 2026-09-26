@@ -2,6 +2,8 @@
 
 A small **UPI payments ledger** with a live operations dashboard. It records customers, merchants, payments and refunds, and shows what the business looks like right now: gross volume, refunds, merchant settlement, double charges and payments that can't be attributed.
 
+![ledgerly dashboard: payments, gross volume, refunds, double charges, settlement](docs/images/dashboard.png)
+
 ledgerly is the demo app for **[Migration Rehearsal](https://github.com/dipakkr/truefoundry-hackathon)**, an agent on TrueForge that rehearses every database migration PR on a masked copy of production before it can reach prod. Its "prod" data is realistic and a little messy, like any ledger that has been running for a while.
 
 ## What's in the app
@@ -74,6 +76,10 @@ Every pull request runs the **Migration Rehearsal** workflow (`.github/workflows
 - `main` requires that check, admins included: a migration PR can only merge once it was rehearsed, approved, applied and verified on prod.
 - `payments` and `refunds` are **protected**: no migration may delete their rows, even with approval.
 - Customer PII (name, email, phone, UPI id, PAN) is masked in every copy that leaves prod.
+
+A migration PR paused in TrueForge, waiting for a human to allow or deny the apply to prod:
+
+![Migration Rehearsal approval in TrueForge for a ledgerly PR](docs/images/migration-approval.png)
 
 The project was connected with one command from the Migration Rehearsal repo: `npm run onboard -- --project ledgerly --repo dipakkr/ledgerly`.
 
