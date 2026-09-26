@@ -1,0 +1,16 @@
+{
+  "name": "ledgerly",
+  "private": true,
+  "type": "module",
+  "description": "A small UPI payments ledger: customers, merchants, payments, refunds, settlement.",
+  "engines": { "node": ">=22.14" },
+  "scripts": {
+    "start": "node server.mjs",
+    "reset": "node scripts/reset.mjs",
+    "deploy:unsafe": "node scripts/deploy-unsafe.mjs"
+  },
+  "dependencies": {
+    "dotenv": "^18.0.4",
+    "pg": "^8.23.0"
+  }
+}
